@@ -1,25 +1,39 @@
 package POO;
 
-public class Cavalo   extends Animal{
+public class  Cavalo extends Animal{
 	
-	private String deslocar;
-
-	public Cavalo(String nome, String sexo, int idade, String emitirSom, String deslocar){
-		super (nome, sexo, emitirSom, idade);
+	private int velocidadeCavalo;
+	
+	public Cavalo (String nome, int idade, String som, int velocidadeCavalo) {
+		super(nome, idade, som);
+		this.velocidadeCavalo = velocidadeCavalo;
 		
-		this.deslocar = deslocar;
+	}
+
+	public int getVelocidadeCavalo() {
+		return velocidadeCavalo;
+	}
+
+	public void setVelocidadeCavalo(int velocidadeCavalo) {
+		this.velocidadeCavalo = velocidadeCavalo;
 	}
 	
-	public String getCorrer() {
-		return deslocar;
-	}
-
-	public void setCorrer(String correr) {
-		this.deslocar = correr;
-	}
-
 	public void imprimirCavalo() {
-		System.out.println("\n\t\tFicha do Animal"+  "\n\nNome: "+getNome()+"\nIdade: "+getIdade()+ " anos"+
-				"\nSexo: " +getSexo()+ "\nEmite o som: " +emitirSom+ "\nMovimentação: "+deslocar);
+		System.out.println("\nO cavalo"+getNome()+" tem "+getIdade()+" anos de idade, corre a uma velocidade média de "+velocidadeCavalo+
+				"km por hora, e emite o seguinte som: "+getEmitirSom());
+		
 	}
+	
+	@Override
+	public void fala(int vezes) {
+		for (int i=0;i<vezes;i++) {
+			System.out.println("\nrinhõõõõ");
+		}
+	}
+	
+	@Override
+	public void seMove(String velocidadeCavalo) {
+		System.out.println("\nO cavalo está correndo "+velocidadeCavalo+" no campo!");
+	}
+	
 }

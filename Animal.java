@@ -1,11 +1,11 @@
 package POO;
 
-public class Animal {
+public abstract class Animal {
 	
-	public String nome;
-	public String sexo;
-	public int idade;
-	public String emitirSom;
+	private String nome;
+	private String sexo;
+	private int idade;
+	private String emitirSom;
 
 	public Animal (String nome, String sexo, String emitirSom, int idade) {
 		this.nome = nome;
@@ -15,6 +15,10 @@ public class Animal {
 	}
 	
 	// criação dos getter and setters
+
+	public Animal(String nome2, int idade2, String som) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getNome() {
 		return nome;
@@ -47,6 +51,16 @@ public class Animal {
 // criação do metódo emitir som
 	public void setEmitirSom(String emitirSom) {
 		this.emitirSom = emitirSom;
+	}
+
+	public void fala(int vezes) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void seMove(String speed) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
